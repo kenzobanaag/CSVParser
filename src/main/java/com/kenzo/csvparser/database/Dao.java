@@ -1,4 +1,8 @@
 package com.kenzo.csvparser.database;
 
-public interface DAO {
+import java.util.List;
+
+public interface Dao {
+    int insert(String[] data);
+    int insert(List<String[]> data);
 }

@@ -1,4 +1,5 @@
 package com.kenzo.csvparser.optimization;
 
-public class ITimer {
+public interface ITimer {
+    long runTimer();
 }

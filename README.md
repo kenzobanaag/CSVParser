@@ -2,13 +2,13 @@
 
 A program that reads and parses a csv file then inserts its valid data to an SQLite database.
 
-##Steps for getting this app running
+## Steps for getting this app running
 
    Clone repository:
 
    git clone https://github.com/kenzobanaag/CSVParser.git
    
-   #####Command Prompt:
+   ##### Command Prompt:
    1. Open command prompt in cloned repo location
    2. Type: 
 
@@ -18,20 +18,20 @@ A program that reads and parses a csv file then inserts its valid data to an SQL
    
    &nbsp;&nbsp;Find output in output folder
    
-   #####IntelliJ Idea
+   ##### IntelliJ Idea
    1. Open IntelliJ, File -> Open -> open pom.xml
    2. Open as Project
    3. Run ParserMain
    4. Find output in output folder
 
-##Overview of approach, design choices, and assumptions
+## Overview of approach, design choices, and assumptions
 
-   ###Approach
+   ### Approach
    
    Main approach was splitting the program into 2 main components, parsing and database functions.
    The main function of the driver was to call the parser, then the database functions asynchronously.
    
-   ######Optimization
+   ###### Optimization
    To optimize the program, I needed to know which component runs slow. I created classes
    that timed the execution of each component. After execution, it will write the durations paired
    with the size of the csv, which could be found in the output folder under runTimes.log.
@@ -44,7 +44,7 @@ A program that reads and parses a csv file then inserts its valid data to an SQL
    each line into its appropriate column. The data was too dirty, and the most efficient way to parse the 
    data into the right column was to just use the split() method. 
 
-   ###Design Choices
+   ### Design Choices
    
    Programming to interfaces and not implementations. This was my main approach when creating components
    since software always changes. I went with a file parser interface to allow the possibility of extending
@@ -59,7 +59,7 @@ A program that reads and parses a csv file then inserts its valid data to an SQL
    that I did for this program. The use of transactions exponentially decreased insertion times by at least
    98 percent.
    
-   ###Assumptions
+   ### Assumptions
    * Since there was no given schema for the data, I did not force a type on each data column eg: boolean for true or 
    false, all data columns were considered as strings.
    * Data is considered "valid" when it has 10 data columns, not counting trailing commas. If the data

@@ -21,8 +21,14 @@ A program that reads and parses a csv file then inserts its valid data to an SQL
    ##### IntelliJ Idea
    1. Open IntelliJ, File -> Open -> open pom.xml
    2. Open as Project
-   3. Run ParserMain
-   4. Find output in output folder
+   3. Set run configurations to
+   ```shell
+      input\ms3Interview.csv
+   ```
+   or enter file path when prompted
+   
+   4. Run ParserMain
+   5. Find output in output folder
 
 ## Overview of approach, design choices, and assumptions
 

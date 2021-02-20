@@ -23,7 +23,7 @@ A program that reads and parses a csv file then inserts its valid data to an SQL
    2. Open as Project
    3. Set run configurations to
    ```shell
-      input\ms3Interview.csv
+   input\ms3Interview.csv
    ```
    or enter file path when prompted
    
